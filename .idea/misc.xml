@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/cd4l/AndroidStudioProjects/RequestMadekenya/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.1565" />
+        <entry key="..\:/Users/cd4l/AndroidStudioProjects/RequestMadekenya/app/src/main/res/drawable/ic_baseline_send_24.xml" value="0.1565" />
+        <entry key="..\:/Users/cd4l/AndroidStudioProjects/RequestMadekenya/app/src/main/res/drawable/ic_baseline_share_24.xml" value="0.1475" />
+        <entry key="..\:/Users/cd4l/AndroidStudioProjects/RequestMadekenya/app/src/main/res/drawable/ic_baseline_verified_24.xml" value="0.1475" />
+        <entry key="..\:/Users/cd4l/AndroidStudioProjects/RequestMadekenya/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1405" />
+        <entry key="..\:/Users/cd4l/AndroidStudioProjects/RequestMadekenya/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1405" />
+        <entry key="..\:/Users/cd4l/AndroidStudioProjects/RequestMadekenya/app/src/main/res/drawable/splash.xml" value="0.129" />
+        <entry key="..\:/Users/cd4l/AndroidStudioProjects/RequestMadekenya/app/src/main/res/layout/activity_change_password.xml" value="0.21195652173913043" />
+        <entry key="..\:/Users/cd4l/AndroidStudioProjects/RequestMadekenya/app/src/main/res/layout/activity_create_account.xml" value="0.19610507246376813" />
+        <entry key="..\:/Users/cd4l/AndroidStudioProjects/RequestMadekenya/app/src/main/res/layout/activity_delivery_note_view.xml" value="0.23052536231884058" />
+        <entry key="..\:/Users/cd4l/AndroidStudioProjects/RequestMadekenya/app/src/main/res/layout/activity_login.xml" value="0.23731884057971014" />
+        <entry key="..\:/Users/cd4l/AndroidStudioProjects/RequestMadekenya/app/src/main/res/layout/activity_main.xml" value="0.19610507246376813" />
+        <entry key="..\:/Users/cd4l/AndroidStudioProjects/RequestMadekenya/app/src/main/res/layout/activity_new_request.xml" value="0.23731884057971014" />
+        <entry key="..\:/Users/cd4l/AndroidStudioProjects/RequestMadekenya/app/src/main/res/layout/activity_view_request.xml" value="0.23052536231884058" />
+        <entry key="..\:/Users/cd4l/AndroidStudioProjects/RequestMadekenya/app/src/main/res/layout/activity_welcome.xml" value="0.19610507246376813" />
+        <entry key="..\:/Users/cd4l/AndroidStudioProjects/RequestMadekenya/app/src/main/res/layout/layout_about_details.xml" value="0.23052536231884058" />
+        <entry key="..\:/Users/cd4l/AndroidStudioProjects/RequestMadekenya/app/src/main/res/layout/layout_adapter_cargo_request.xml" value="0.23052536231884058" />
+        <entry key="..\:/Users/cd4l/AndroidStudioProjects/RequestMadekenya/app/src/main/res/layout/layout_adapter_delivery_note_footer.xml" value="0.469811320754717" />
+        <entry key="..\:/Users/cd4l/AndroidStudioProjects/RequestMadekenya/app/src/main/res/layout/layout_adapter_delivery_note_head.xml" value="0.23052536231884058" />
+        <entry key="..\:/Users/cd4l/AndroidStudioProjects/RequestMadekenya/app/src/main/res/layout/layout_adapter_delivery_note_list.xml" value="0.10499174917491749" />
+        <entry key="..\:/Users/cd4l/AndroidStudioProjects/RequestMadekenya/app/src/main/res/layout/layout_adapter_delivery_note_list_item.xml" value="0.23052536231884058" />
+        <entry key="..\:/Users/cd4l/AndroidStudioProjects/RequestMadekenya/app/src/main/res/layout/layout_adapter_request_summary.xml" value="0.23052536231884058" />
+        <entry key="..\:/Users/cd4l/AndroidStudioProjects/RequestMadekenya/app/src/main/res/layout/layout_dialog_add_cargo.xml" value="0.23731884057971014" />
+        <entry key="..\:/Users/cd4l/AndroidStudioProjects/RequestMadekenya/app/src/main/res/menu/delivery_note_view_menu.xml" value="0.24583333333333332" />
+        <entry key="..\:/Users/cd4l/AndroidStudioProjects/RequestMadekenya/app/src/main/res/menu/main_menu.xml" value="0.25" />
+        <entry key="..\:/Users/cd4l/AndroidStudioProjects/RequestMadekenya/app/src/main/res/menu/menu_create_account.xml" value="0.24583333333333332" />
+        <entry key="..\:/Users/cd4l/AndroidStudioProjects/RequestMadekenya/app/src/main/res/menu/send_request_menu.xml" value="0.25" />
+        <entry key="..\:/Users/cd4l/AndroidStudioProjects/RequestMadekenya/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.129" />
+        <entry key="..\:/Users/cd4l/AndroidStudioProjects/RequestMadekenya/app/src/main/res/xml/filepaths.xml" value="0.23052536231884058" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

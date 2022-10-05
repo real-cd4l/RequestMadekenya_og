@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:text="1 ."
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:paddingStart="2dp"
+                android:paddingEnd="16dp"
+                android:breakStrategy="balanced"
+                android:text="MTEJA HAKIKISHA UMEFUNGA MZIGO WAKO IMARA"
+                android:textColor="@color/black" />
+        </TableRow>
+
+        <TableRow
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:text="2 ."
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:paddingStart="2dp"
+                android:paddingEnd="16dp"
+                android:breakStrategy="balanced"
+                android:text="MTEJA MALI YOYOTE ITAKAYOHARIBIKA NJIANI HATUTAKUA NA DHAMANA NAYO KUTOKANA NA HALI YA BARABARA.NI MUHIMU KUKATIA MZIGO
+WAKO BIMA KWA KUWA MSAFIRISHAJI HATO HUSIKA NA BIMA YA MZIGO WAKO."
+                android:textColor="@color/black" />
+        </TableRow>
+
+        <TableRow
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:text="3 . "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:paddingStart="2dp"
+                android:paddingEnd="16dp"
+                android:breakStrategy="balanced"
+                android:text="MIZIGO YA KUVUNJIKA KAMA VILE VIOO, TV, VIGAE N.K HATUTAHUSIKA NA UHALIBIFU WOWOTE UTAKAO JITOKEZA"
+                android:textColor="@color/black" />
+        </TableRow>
+
+        <TableRow
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:text="4 ."
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:paddingStart="2dp"
+                android:paddingEnd="16dp"
+                android:breakStrategy="balanced"
+                android:text="HATUPOKEI MALALAMIKO YOYOTE KUHUSU MZIGO BAADA YA SIKU 20 TANGU KUPOKEA."
+                android:textColor="@color/black" />
+        </TableRow>
+    </TableLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/black" />
+
+    <TextView
+        android:id="@+id/tvDeliveryNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:gravity="center"
+        android:textColor="@color/black" />
+
+</LinearLayout>

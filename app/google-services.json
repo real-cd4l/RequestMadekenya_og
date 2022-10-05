@@ -1,0 +1,93 @@
+{
+  "project_info": {
+    "project_number": "440828497669",
+    "firebase_url": "https://parcel-mm-default-rtdb.firebaseio.com",
+    "project_id": "parcel-mm",
+    "storage_bucket": "parcel-mm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:440828497669:android:9d7c4708d9d64b91bc316c",
+        "android_client_info": {
+          "package_name": "com.cd4l.madekenya"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "440828497669-5rq0pfkm0g0rknqbgvo9a3pob306j69o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cd4l.madekenya",
+            "certificate_hash": "a0c9bb77850fa98b44b54ad4e60c5da96d36b3d2"
+          }
+        },
+        {
+          "client_id": "440828497669-8qja64idop4m6am4n3ql3o2inseucjq5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cd4l.madekenya",
+            "certificate_hash": "e32204d7a8c81fe60b045f49485ba4fa62c499f8"
+          }
+        },
+        {
+          "client_id": "440828497669-vfhoacdvshf6o6hbrttu8taa6smiocqp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxGvFktUDngVuL37OoVRuT6s8TT2Hu2-k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "440828497669-vfhoacdvshf6o6hbrttu8taa6smiocqp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:440828497669:android:83609e5ca2f7e59fbc316c",
+        "android_client_info": {
+          "package_name": "com.madekenyarequest.madekenya"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "440828497669-bv3008c27n9nho1op1jv58dp3v1lndc8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.madekenyarequest.madekenya",
+            "certificate_hash": "0454af5a684ec58ca15c7bc0c5f578e7eff665d6"
+          }
+        },
+        {
+          "client_id": "440828497669-vfhoacdvshf6o6hbrttu8taa6smiocqp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxGvFktUDngVuL37OoVRuT6s8TT2Hu2-k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "440828497669-vfhoacdvshf6o6hbrttu8taa6smiocqp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
