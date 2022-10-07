@@ -38,9 +38,8 @@ class MainActivity : AppCompatActivity() {
             toolBar.title = subscriber?.username
             adapter = RequestSummaryAdapter(this@MainActivity, requests)
             toolBar.menu.findItem(R.id.verifiedPrompt).isVisible = subscriber!!.isVerified
-            if (!subscriber!!.isVerified) {
-                checkIfUserIsVerified()
-            }
+
+            checkIfUserIsVerified()
             recyclerView.adapter = adapter
             if (subscriber != null && subscriber?.id != null) {
                 fetchAllRequests(subscriber?.id!!)
@@ -77,6 +76,8 @@ class MainActivity : AppCompatActivity() {
                         LocalDb.saveCustomerLocal(applicationContext, subscriber)
                     }
 
+                }else{
+                    toolBar.menu.findItem(R.id.verifiedPrompt).isVisible = false
                 }
             }
 
@@ -99,7 +100,7 @@ class MainActivity : AppCompatActivity() {
                     tvNoRequest.visibility = View.GONE
                     requests.clear()
                     adapter.notifyDataSetChanged()
-                    
+
                     for (child in snapshot.children) {
                         val request: Request? = child.getValue(Request::class.java)
                         if (request != null) {
@@ -151,7 +152,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showVerifiedMessage() {
-        MaterialAlertDialogBuilder(this@MainActivity, R.style.AlertDialogTheme).setMessage(subscriber!!.username + " !, wewe ni mteja wetu na tunakufahamu, tuko pamoja. tuko kazini.").show()
+        MaterialAlertDialogBuilder(this@MainActivity, R.style.AlertDialogTheme).setMessage(subscriber!!.username + " !, wewe ni mteja wetu na tunakufahamu, tuko pamoja. tuko kazini.").setPositiveButton("Sawa",null).show()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

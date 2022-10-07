@@ -1,14 +1,15 @@
 package com.madekenyarequest.madekenya;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,7 +20,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
@@ -53,6 +53,8 @@ public class ViewRequestActivity extends AppCompatActivity {
     private Subscriber subscriber;
     private MaterialButton submitButton;
     private LinearLayout ll_show_progress;
+    private ProgressBar progressBar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,11 +65,8 @@ public class ViewRequestActivity extends AppCompatActivity {
         registerViews();
         if (getIntent().hasExtra("request")) {
             subscriber = LocalDb.getSavedCustomer(getApplicationContext());
-            Log.d(TAG, "onCreate: subscriber string " + subscriber.toString());
-
             request = getIntent().getParcelableExtra("request");
             if (request != null) {
-
                 manageToolBarIcons();
             }
         } else if (getIntent().hasExtra("subscriber")) {
@@ -137,9 +136,6 @@ public class ViewRequestActivity extends AppCompatActivity {
             EditText edIdadi = root.findViewById(R.id.edIdadi);
             EditText edUnapoenda = root.findViewById(R.id.edUnapoenda);
 
-            if (request.getStatus() == Request.REQUEST_SENT) {
-                submitButton.setVisibility(View.VISIBLE);
-            }
 
             new MaterialAlertDialogBuilder(ViewRequestActivity.this, R.style.AlertDialogTheme)
                     .setView(root)
@@ -162,7 +158,12 @@ public class ViewRequestActivity extends AppCompatActivity {
                                 Item item = new Item(jinaLaMzigo, idadiLong, unapoenda, unaRisiti);
                                 request.getItems().add(item);
                                 requestItemsAdapter.notifyItemInserted(request.getItems().size());
-                                imbSendRequest.setVisibility(View.VISIBLE);
+                                if (request.getStatus() == Request.REQUEST_PENDING) {
+                                    imbSendRequest.setVisibility(View.VISIBLE);
+                                }
+                                if (request.getStatus() == Request.REQUEST_SENT) {
+                                    submitButton.setVisibility(View.VISIBLE);
+                                }
                             }
                         }
                     })
@@ -171,9 +172,8 @@ public class ViewRequestActivity extends AppCompatActivity {
         });
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("madekenyarequest");
         View.OnClickListener sendRequest = v -> {
+            progressBar.setVisibility(View.VISIBLE);
             String requestKey = String.valueOf(request.getNumber());
-
-
             //increment
             String totalPendingRequestCargoPath = "subscriber/" + subscriber.getId() + "/totalPendingRequestCargo";
             reference.child(totalPendingRequestCargoPath).runTransaction(new Transaction.Handler() {
@@ -204,11 +204,14 @@ public class ViewRequestActivity extends AppCompatActivity {
                     if (error == null) {
                         new Thread(() -> {
                             request.setStatus(Request.REQUEST_SENT);
-                            reference.child("requests").child(subscriber.getId()).child(requestKey).setValue(request).addOnSuccessListener(new OnSuccessListener<Void>() {
-                                @Override
-                                public void onSuccess(Void unused) {
-                                    new MaterialAlertDialogBuilder(ViewRequestActivity.this, R.style.AlertDialogTheme).setMessage("umefanikiwa kututumia maombi ya kusafirishiwa mizigo,Tunazingatia, Asante.").setPositiveButton("Sawa", null).show();
-                                    finish();
+                            reference.child("requests").child(subscriber.getId()).child(requestKey).setValue(request).addOnCompleteListener(task -> {
+                                progressBar.setVisibility(View.GONE);
+                                if (task.isSuccessful()) {
+                                    imbSendRequest.setVisibility(View.GONE);
+                                    imbDoneRequest.setVisibility(View.VISIBLE);
+                                    mbAddCargo.setVisibility(View.GONE);
+                                    new MaterialAlertDialogBuilder(ViewRequestActivity.this, R.style.AlertDialogTheme).setMessage("umefanikiwa kututumia maombi ya kusafirishiwa mizigo,Tunazingatia, Asante.").setCancelable(false).setPositiveButton("Sawa", (dialog, which) -> finish()).show();
+//                                        finish();
                                 }
                             });
                         }).start();
@@ -220,10 +223,19 @@ public class ViewRequestActivity extends AppCompatActivity {
         };
         imbSendRequest.setOnClickListener(sendRequest);
         submitButton.setOnClickListener(v -> new Thread(() -> {
+            runOnUiThread(() -> progressBar.setVisibility(View.VISIBLE));
+
             request.setStatus(Request.REQUEST_SENT);
             reference.child("requests").child(subscriber.getId()).child(String.valueOf(request.getNumber())).setValue(request).addOnSuccessListener(unused -> {
-                new MaterialAlertDialogBuilder(ViewRequestActivity.this, R.style.AlertDialogTheme).setMessage("Umefanikiwa kutuma maboresho,Tumeyapokea. Asante.").setPositiveButton("Sawa", null).show();
-                finish();
+                runOnUiThread(() -> progressBar.setVisibility(View.GONE));
+
+                new MaterialAlertDialogBuilder(ViewRequestActivity.this, R.style.AlertDialogTheme).setMessage("Umefanikiwa kutuma maboresho,Tumeyapokea. Asante.").setPositiveButton("Sawa", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }
+                }).show();
+//                finish();
             });
         }).start());
 
@@ -275,5 +287,6 @@ public class ViewRequestActivity extends AppCompatActivity {
         ll_show_progress = findViewById(R.id.ll_show_progress);
         tvSubtitleTitle = findViewById(R.id.tvSubtitleTitle);
         tvTitle = findViewById(R.id.tvTitle);
+        progressBar = findViewById(R.id.progressBar);
     }
 }
